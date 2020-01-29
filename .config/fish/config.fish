@@ -10,7 +10,9 @@ alias be       "bundle exec"
 alias dc       "docker-compose"
 alias k        "kubectl"
 
+# environment variables
+set -x EDITOR vim
+set -x LC_CTYPE en_US.UTF-8
 
-# Complete aws-cli
-
+# complete aws-cli
 complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws2_completer | sed \'s/ $//\'; end)'
