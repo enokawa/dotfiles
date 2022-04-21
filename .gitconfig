@@ -1,0 +1,5 @@
+[ghq]
+root = ~/workspace
+
+[includeIf "gitdir:~/workspace/github.com/enokawa/"]
+path = ~/workspace/github.com/enokawa/.gitconfig
