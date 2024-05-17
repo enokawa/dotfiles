@@ -17,9 +17,12 @@ set -x EDITOR vim
 set -x LC_CTYPE en_US.UTF-8
 set -x LANG en_US.UTF-8
 set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_DATA_HOME $HOME/.local/share
+set -x AQUA_ROOT_DIR $XDG_DATA_HOME/aquaproj-aqua
 
 # PATH
 set -x PATH /opt/homebrew/bin $PATH
+set -x PATH $AQUA_ROOT_DIR/bin $PATH
 set -Ux fish_user_paths $HOME/.anyenv/bin $fish_user_paths
 
 # No greeting
