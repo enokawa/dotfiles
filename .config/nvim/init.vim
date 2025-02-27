@@ -16,6 +16,8 @@ endif
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'itchyny/lightline.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
   Plug 'vim-denops/denops.vim'
   Plug 'Shougo/ddc.vim'
   Plug 'Shougo/ddc-source-around'
@@ -23,17 +25,21 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Shougo/ddc-filter-sorter_rank'
   Plug 'Shougo/ddc-source-mocword'
   Plug 'Shougo/ddc-ui-native'
+  Plug 'shun/ddc-source-vim-lsp'
 call plug#end()
 
 "ddc
 call ddc#custom#patch_global('ui', 'native')
-call ddc#custom#patch_global('sources', ['around', 'mocword'])
+call ddc#custom#patch_global('sources', ['around', 'mocword', 'vim-lsp'])
 call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {'mark': 'A'},
       \ 'mocword': { 'mark': 'mocword' },
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank']},
+      \ 'vim-lsp': {
+      \   'matchers': ['matcher_head'],
+      \    'mark': 'LSP'},
       \ })
 
 " <TAB> completion in ddc
